@@ -29,11 +29,15 @@ public class Computer {
 
     public void unRegisterGame(String name) {
 
-        for (Game game: this.games) {
-            if(game.getName().equals(name)) {
+        this.games.removeIf(game -> game.getName().equals(name));
+    }
 
-                this.games.remove(game);
-            }
-        }
+    public int getGameCount() {
+        return games.size();
+    }
+
+    public Game getGameByIndex(int index) {
+
+        return this.games.get(index - 1);
     }
 }

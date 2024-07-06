@@ -1,7 +1,11 @@
 package service;
 
-import java.time.LocalDateTime;
+import lombok.Getter;
 
+import java.time.LocalDateTime;
+import java.util.Random;
+
+@Getter
 public class RentalSession {
 
     public static final int SESSION_DURATION = 40;
@@ -11,6 +15,8 @@ public class RentalSession {
     private Computer computer;
     private LocalDateTime startSession;
     private LocalDateTime endSession;
+
+    Random random = new Random();
 
     public RentalSession(Client client, Computer computer) {
 
@@ -29,7 +35,22 @@ public class RentalSession {
         this.endSession = LocalDateTime.now().plusMinutes(SESSION_DURATION);
 
         computer.setIsAvailable(false);
-        client.withdrawal(500.0);
 
+        Game game = chooseGame(computer);
+        int periodCount = choosePeriod();
+
+        client.withdrawal(game.getPrice() * periodCount);
+
+    }
+
+    private Game chooseGame(Computer computer) {
+
+        int id = random.nextInt(computer.getGameCount()) + 1;
+        return computer.getGameByIndex(id);
+    }
+
+    private int choosePeriod() {
+
+        return random.nextInt(2) + 1;
     }
 }

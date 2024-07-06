@@ -1,3 +1,7 @@
 
-‡
-java:S1128"?Remove this unused import 'java.util.concurrent.CyclicBarrier'.(œè—ùÿÿÿÿ8Ğ¡½¤ˆ2J$a1892c40-91ae-48b3-9c34-79081e3641fd
+Š
+java:S1854
+"BRemove this useless assignment to local variable "rentalSessions".(¬İùŠüÿÿÿÿ8—ÃâÊˆ2J$850973c1-73a8-4ff8-970d-9d4e7b08df6d
+{
+java:S1481
+"3Remove this unused "rentalSessions" local variable.(¬İùŠüÿÿÿÿ8—ÃâÊˆ2J$d225f04f-edd8-4bc0-91a7-2646e5441242

@@ -62,3 +62,5 @@ Q.idea/sonarlint/securityhotspotstore/e/4/e44a8606ce010ad9b89aafdfcee2ab49afbf6d
 Q.idea/sonarlint/securityhotspotstore/3/b/3b9ac0356207403d3c3d789ab8596d936fe79f3f,7\4\7477a86debf691a02074f7809fefc2aa8421aac7
 Å
 Q.idea/sonarlint/securityhotspotstore/c/b/cbbd62c76e2a0ec1bedac2652e76ff93df1e4222,8\5\856397145d05f2e4b707236dd8f84e305236d089
+_
+/src/main/java/service/RentalSessionService.java,0\5\059ce16bb126e2f47cdbc5cc881cfeb3fa3d90c7

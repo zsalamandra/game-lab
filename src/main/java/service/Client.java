@@ -3,6 +3,7 @@ package service;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Data
 public class Client {
@@ -45,6 +46,20 @@ public class Client {
     @Override
     public String toString() {
 
-        return String.format("Client: \nid: %d\nname: %s\nbalance: %.2f", id, name, membership.getBalance());
+        return String.format("Client: id: %d\tname: %s\t\tbalance: %.2f", id, name, membership.getBalance());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return Objects.equals(getId(), client.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 }

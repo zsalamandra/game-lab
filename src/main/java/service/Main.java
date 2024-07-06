@@ -2,7 +2,6 @@ package service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.CyclicBarrier;
 
 public class Main {
 
@@ -10,8 +9,8 @@ public class Main {
 
         List<RentalSession> rentalSessions = new ArrayList<>();
 
-        Game game1 = new Game("Mortal Kombat", GameGenre.FIGHTING);
-        Game game2 = new Game("Gran Turizmo", GameGenre.ACTION);
+        Game game1 = new Game("Mortal Kombat", GameGenre.FIGHTING, 120.0);
+        Game game2 = new Game("Gran Turizmo", GameGenre.ACTION, 180.0);
 
         Client client1 = new Client("Zaur");
         client1.addFunds(500.0);
@@ -33,12 +32,11 @@ public class Main {
         club.registerClient(client1);
         club.registerClient(client2);
 
-        RentalSession rentalSession1 = new RentalSession(client1, computer2);
-        RentalSession rentalSession2= new RentalSession(client1, computer1);
+        club.printClientsInfo();
 
-        rentalSessions.add(rentalSession1);
-        rentalSessions.add(rentalSession2);
+        RentalSessionService.addSession(client1, computer2);
+        RentalSessionService.addSession(client2, computer1);
 
-
+        club.printClientsInfo();
     }
 }
